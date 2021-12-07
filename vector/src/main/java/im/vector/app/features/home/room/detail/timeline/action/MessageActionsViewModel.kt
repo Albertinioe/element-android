@@ -345,6 +345,10 @@ class MessageActionsViewModel @AssistedInject constructor(@Assisted
                 add(EventSharedAction.Quote(eventId))
             }
 
+            if(canTranslate(msgType)) {
+                add(EventSharedAction.Translate(messageContent!!.body))
+            }
+
             if (timelineEvent.hasBeenEdited()) {
                 add(EventSharedAction.ViewEditHistory(informationData))
             }
@@ -421,6 +425,21 @@ class MessageActionsViewModel @AssistedInject constructor(@Assisted
         }
     }
 
+    // translate
+//    private fun canTranslate(event: TimelineEvent, messageContent: MessageContent?, actionPermissions: ActionPermissions): Boolean {
+//        if(event.root.getClearType() != EventType.MESSAGE) return false
+//        if(!actionPermissions.canSendMessage) return false
+//        return when (messageContent?.msgType) {
+//            MessageType.MSGTYPE_TEXT,
+//            MessageType.MSGTYPE_NOTICE,
+//            MessageType.MSGTYPE_EMOTE,
+//            MessageType.MSGTYPE_LOCATION -> {
+//                true
+//            }
+//            else ->false
+//        }
+//    }
+
     private fun canRedact(event: TimelineEvent, actionPermissions: ActionPermissions): Boolean {
         // Only event of type EventType.MESSAGE or EventType.STICKER are supported for the moment
         if (event.root.getClearType() !in listOf(EventType.MESSAGE, EventType.STICKER)) return false
@@ -428,6 +447,16 @@ class MessageActionsViewModel @AssistedInject constructor(@Assisted
         if (event.root.senderId == session.myUserId) return true
         // Check permission for messages sent by other users
         return actionPermissions.canRedact
+    }
+
+    private fun canTranslate(msgType: String?): Boolean {
+        return when (msgType) {
+            MessageType.MSGTYPE_TEXT,
+            MessageType.MSGTYPE_NOTICE,
+            MessageType.MSGTYPE_EMOTE,
+            MessageType.MSGTYPE_LOCATION -> true
+            else                         -> false
+        }
     }
 
     private fun canRetry(event: TimelineEvent, actionPermissions: ActionPermissions): Boolean {

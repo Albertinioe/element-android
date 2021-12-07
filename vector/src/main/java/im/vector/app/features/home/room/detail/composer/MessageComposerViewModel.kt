@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2021 New Vector Ltd
+ * Copyright 2021 Qwerty Networks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +86,7 @@ class MessageComposerViewModel @AssistedInject constructor(
         when (action) {
             is MessageComposerAction.EnterEditMode                  -> handleEnterEditMode(action)
             is MessageComposerAction.EnterQuoteMode                 -> handleEnterQuoteMode(action)
+            is MessageComposerAction.EnterTranslateMode             -> handleEnterTranslateMode(action)
             is MessageComposerAction.EnterRegularMode               -> handleEnterRegularMode(action)
             is MessageComposerAction.EnterReplyMode                 -> handleEnterReplyMode(action)
             is MessageComposerAction.SendMessage                    -> handleSendMessage(action)
@@ -148,6 +150,13 @@ class MessageComposerViewModel @AssistedInject constructor(
     }
 
     private fun handleEnterQuoteMode(action: MessageComposerAction.EnterQuoteMode) {
+        room.getTimeLineEvent(action.eventId)?.let { timelineEvent ->
+            setState { copy(sendMode = SendMode.Quote(timelineEvent, action.text)) }
+        }
+    }
+
+    // translate
+    private fun handleEnterTranslateMode(action: MessageComposerAction.EnterTranslateMode) {
         room.getTimeLineEvent(action.eventId)?.let { timelineEvent ->
             setState { copy(sendMode = SendMode.Quote(timelineEvent, action.text)) }
         }

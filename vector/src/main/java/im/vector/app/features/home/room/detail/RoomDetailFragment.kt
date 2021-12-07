@@ -18,6 +18,7 @@ package im.vector.app.features.home.room.detail
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color
@@ -67,6 +68,7 @@ import com.airbnb.mvrx.fragmentViewModel
 import com.airbnb.mvrx.withState
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.vanniktech.emoji.EmojiPopup
+import im.vector.app.ApiTranslate
 import im.vector.app.R
 import im.vector.app.core.dialogs.ConfirmationDialogBuilder
 import im.vector.app.core.dialogs.GalleryOrCameraDialogHelper
@@ -184,11 +186,14 @@ import im.vector.app.features.widgets.WidgetActivity
 import im.vector.app.features.widgets.WidgetArgs
 import im.vector.app.features.widgets.WidgetKind
 import im.vector.app.features.widgets.permissions.RoomWidgetPermissionBottomSheet
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlinx.parcelize.Parcelize
 import nl.dionsegijn.konfetti.models.Shape
 import nl.dionsegijn.konfetti.models.Size
@@ -196,6 +201,7 @@ import org.billcarsonfr.jsonviewer.JSonViewerDialog
 import org.commonmark.parser.Parser
 import org.matrix.android.sdk.api.session.Session
 import org.matrix.android.sdk.api.session.content.ContentAttachmentData
+import org.matrix.android.sdk.api.session.events.model.toContent
 import org.matrix.android.sdk.api.session.events.model.toModel
 import org.matrix.android.sdk.api.session.room.model.Membership
 import org.matrix.android.sdk.api.session.room.model.RoomSummary
@@ -223,6 +229,7 @@ import reactivecircus.flowbinding.android.view.focusChanges
 import reactivecircus.flowbinding.android.widget.textChanges
 import timber.log.Timber
 import java.net.URL
+import java.util.Locale
 import java.util.UUID
 import javax.inject.Inject
 
@@ -2010,6 +2017,33 @@ class RoomDetailFragment @Inject constructor(
             is EventSharedAction.Quote                      -> {
                 messageComposerViewModel.handle(MessageComposerAction.EnterQuoteMode(action.eventId, views.composerLayout.text.toString()))
             }
+            // translate
+
+            is EventSharedAction.Translate                      -> {
+
+                CoroutineScope(Dispatchers.IO).launch {
+                    val res = action.content
+                    val lang = Locale.getDefault().language
+                    val apiTranslate = ApiTranslate()
+                    var textRes = apiTranslate.runPostApi(res, lang)
+
+                    val builder = AlertDialog.Builder(context)
+
+                    builder.setTitle("Translate")
+
+                    builder.setMessage(textRes)
+
+                    builder.setPositiveButton("Ok") {_, _->}
+
+                    withContext(Dispatchers.Main) {
+                        val dialog: AlertDialog = builder.create()
+                        dialog.show()
+                    }
+
+                }
+
+            }
+
             is EventSharedAction.Reply                      -> {
                 if (withState(messageComposerViewModel) { it.isVoiceMessageIdle }) {
                     messageComposerViewModel.handle(MessageComposerAction.EnterReplyMode(action.eventId, views.composerLayout.text.toString()))
