@@ -1,5 +1,6 @@
 /*
  * Copyright 2019 New Vector Ltd
+ * Copyright 2021 Qwerty Networks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,14 +102,14 @@ class LoginFragment @Inject constructor() : AbstractSSOLoginFragment<FragmentLog
         }
     }
 
-    private fun setupSocialLoginButtons(state: LoginViewState) {
-        views.loginSocialLoginButtons.mode = when (state.signMode) {
-            SignMode.Unknown            -> error("developer error")
-            SignMode.SignUp             -> SocialLoginButtonsView.Mode.MODE_SIGN_UP
-            SignMode.SignIn,
-            SignMode.SignInWithMatrixId -> SocialLoginButtonsView.Mode.MODE_SIGN_IN
-        }.exhaustive
-    }
+//    private fun setupSocialLoginButtons(state: LoginViewState) {
+//        views.loginSocialLoginButtons.mode = when (state.signMode) {
+//            SignMode.Unknown            -> error("developer error")
+//            SignMode.SignUp             -> SocialLoginButtonsView.Mode.MODE_SIGN_UP
+//            SignMode.SignIn,
+//            SignMode.SignInWithMatrixId -> SocialLoginButtonsView.Mode.MODE_SIGN_IN
+//        }.exhaustive
+//    }
 
     private fun submit() {
         cleanupUi()
@@ -265,7 +266,7 @@ class LoginFragment @Inject constructor() : AbstractSSOLoginFragment<FragmentLog
 
         setupUi(state)
         setupAutoFill(state)
-        setupSocialLoginButtons(state)
+//        setupSocialLoginButtons(state)
         setupButtons(state)
 
         when (state.asyncLoginAction) {

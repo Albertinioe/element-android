@@ -1,5 +1,6 @@
 /*
  * Copyright 2019 New Vector Ltd
+ * Copyright 2021 Qwerty Networks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,19 +46,20 @@ class LoginSplashFragment @Inject constructor(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupViews()
+        getStarted()
+//        setupViews()
     }
 
     private fun setupViews() {
         views.loginSplashSubmit.debouncedClicks { getStarted() }
 
-        if (BuildConfig.DEBUG || vectorPreferences.developerMode()) {
-            views.loginSplashVersion.isVisible = true
-            @SuppressLint("SetTextI18n")
-            views.loginSplashVersion.text = "Version : ${BuildConfig.VERSION_NAME}\n" +
-                    "Branch: ${BuildConfig.GIT_BRANCH_NAME}\n" +
-                    "Build: ${BuildConfig.BUILD_NUMBER}"
-        }
+//        if (BuildConfig.DEBUG || vectorPreferences.developerMode()) {
+//            views.loginSplashVersion.isVisible = true
+//            @SuppressLint("SetTextI18n")
+//            views.loginSplashVersion.text = "Version : ${BuildConfig.VERSION_NAME}\n" +
+//                    "Branch: ${BuildConfig.GIT_BRANCH_NAME}\n" +
+//                    "Build: ${BuildConfig.BUILD_NUMBER}"
+//        }
     }
 
     private fun getStarted() {

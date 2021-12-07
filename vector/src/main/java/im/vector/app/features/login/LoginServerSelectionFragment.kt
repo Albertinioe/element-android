@@ -1,5 +1,6 @@
 /*
  * Copyright 2019 New Vector Ltd
+ * Copyright 2021 Qwerty Networks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,8 +39,9 @@ class LoginServerSelectionFragment @Inject constructor() : AbstractLoginFragment
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initViews()
-        initTextViews()
+//        initViews()
+//        initTextViews()
+        selectEMS()
     }
 
     private fun initViews() {
