@@ -17,6 +17,8 @@
 
 package im.vector.app.features.login
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -44,6 +46,7 @@ import org.matrix.android.sdk.api.failure.Failure
 import org.matrix.android.sdk.api.failure.MatrixError
 import org.matrix.android.sdk.api.failure.isInvalidPassword
 import reactivecircus.flowbinding.android.widget.textChanges
+import java.util.Locale
 import javax.inject.Inject
 
 /**
@@ -243,7 +246,12 @@ class LoginFragment @Inject constructor() : AbstractSSOLoginFragment<FragmentLog
     }
 
     private fun forgetPasswordClicked() {
-        loginViewModel.handle(LoginAction.PostViewEvent(LoginViewEvents.OnForgetPasswordClicked))
+//        loginViewModel.handle(LoginAction.PostViewEvent(LoginViewEvents.OnForgetPasswordClicked))
+        val lang = Locale.getDefault().language
+        val url = "https://qaim.me/$lang/auth?reset"
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
     }
 
     override fun resetViewModel() {
