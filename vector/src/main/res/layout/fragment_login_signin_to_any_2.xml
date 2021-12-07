@@ -21,6 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/layout_vertical_margin"
+                android:visibility="gone"
                 android:textColor="?vctr_content_primary"
                 tools:text="@string/login_signin_to" />
 
@@ -28,7 +29,7 @@
                 android:id="@+id/loginFieldTil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="12dp"
                 android:hint="@string/login_signin_username_hint"
                 app:errorEnabled="true">
 
@@ -99,7 +100,7 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:visibility="gone"
-                tools:visibility="visible">
+                tools:visibility="gone">
 
                 <TextView
                     android:id="@+id/loginSocialLoginHeader"

@@ -41,7 +41,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginSignupSigninServerIcon"
                 app:layout_goneMarginTop="0dp"
-                tools:text="@string/login_connect_to" />
+                tools:text="@string/login_connect_to"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/loginSignupSigninText"
@@ -62,7 +63,7 @@
                 style="@style/Widget.Vector.Button.Login"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="38dp"
+                android:layout_marginTop="88dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginSignupSigninText"
