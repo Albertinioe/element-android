@@ -201,8 +201,8 @@ class VectorSettingsGeneralFragment @Inject constructor(
                 .summary = session.myUserId
 
         // homeserver
-        findPreference<VectorPreference>(VectorPreferences.SETTINGS_HOME_SERVER_PREFERENCE_KEY)!!
-                .summary = session.sessionParams.homeServerUrl
+//        findPreference<VectorPreference>(VectorPreferences.SETTINGS_HOME_SERVER_PREFERENCE_KEY)!!
+//                .summary = session.sessionParams.homeServerUrl
 
         // Contacts
         setContactsPreferences()
