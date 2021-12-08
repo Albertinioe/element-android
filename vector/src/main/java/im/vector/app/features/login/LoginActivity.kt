@@ -1,5 +1,6 @@
 /*
  * Copyright 2019 New Vector Ltd
+ * Copyright 2021 Qwerty Networks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +37,7 @@ import im.vector.app.core.extensions.POP_BACK_STACK_EXCLUSIVE
 import im.vector.app.core.extensions.addFragment
 import im.vector.app.core.extensions.addFragmentToBackstack
 import im.vector.app.core.extensions.exhaustive
+import im.vector.app.core.extensions.replaceFragment
 import im.vector.app.core.platform.ToolbarConfigurable
 import im.vector.app.core.platform.VectorBaseActivity
 import im.vector.app.databinding.ActivityLoginBinding
@@ -81,6 +83,8 @@ open class LoginActivity : VectorBaseActivity<ActivityLoginBinding>(), ToolbarCo
     override fun getCoordinatorLayout() = views.coordinatorLayout
 
     override fun initUiAndData() {
+        loginViewModel.handle(LoginAction.UpdateHomeServer("https://matrix.m.mybusines.app"))
+
         if (isFirstCreation()) {
             addFirstFragment()
         }
@@ -99,7 +103,8 @@ open class LoginActivity : VectorBaseActivity<ActivityLoginBinding>(), ToolbarCo
     }
 
     protected open fun addFirstFragment() {
-        addFragment(R.id.loginFragmentContainer, LoginSplashFragment::class.java)
+//        addFragment(R.id.loginFragmentContainer, LoginSplashFragment::class.java)
+        replaceFragment(R.id.loginFragmentContainer, LoginSignUpSignInSelectionFragment::class.java)
     }
 
     private fun handleLoginViewEvents(loginViewEvents: LoginViewEvents) {
