@@ -10,7 +10,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/icon_qaim_white" />
+            android:src="@drawable/qaim_splash_white" />
     </item>
 
 </layer-list>
