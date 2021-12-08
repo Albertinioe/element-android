@@ -29,7 +29,7 @@
                 app:tint="?vctr_content_primary"
                 tools:ignore="MissingPrefix,UnknownId"
                 tools:src="@drawable/ic_logo_matrix_org"
-                tools:visibility="visible" />
+                tools:visibility="gone" />
 
             <TextView
                 android:id="@+id/loginSignupSigninTitle"
@@ -41,6 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginSignupSigninServerIcon"
                 app:layout_goneMarginTop="0dp"
+                android:visibility="gone"
                 tools:text="@string/login_connect_to" />
 
             <TextView
@@ -105,13 +106,15 @@
                     android:layout_marginTop="27dp"
                     android:gravity="center"
                     android:text="@string/login_social_continue"
-                    android:textColor="?vctr_content_secondary" />
+                    android:textColor="?vctr_content_secondary"
+                    android:visibility="gone"/>
 
                 <im.vector.app.features.login.SocialLoginButtonsView
                     android:id="@+id/loginSignupSigninSocialLoginButtons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:signMode="continue_with" />
+                    tools:signMode="continue_with"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
