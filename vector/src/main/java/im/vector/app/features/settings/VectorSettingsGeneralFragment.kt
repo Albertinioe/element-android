@@ -1,5 +1,6 @@
 /*
  * Copyright 2019 New Vector Ltd
+ * Copyright 2021 Qwerty Networks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,11 +110,11 @@ class VectorSettingsGeneralFragment @Inject constructor(
 
     private val integrationServiceListener = object : IntegrationManagerService.Listener {
         override fun onConfigurationChanged(configs: List<IntegrationManagerConfig>) {
-            refreshIntegrationManagerSettings()
+//            refreshIntegrationManagerSettings()
         }
 
         override fun onIsEnabledChanged(enabled: Boolean) {
-            refreshIntegrationManagerSettings()
+//            refreshIntegrationManagerSettings()
         }
     }
 
@@ -188,8 +189,8 @@ class VectorSettingsGeneralFragment @Inject constructor(
             true
         }
 
-        val discoveryPreference = findPreference<VectorPreference>(VectorPreferences.SETTINGS_DISCOVERY_PREFERENCE_KEY)!!
-        discoveryPreference.onPreferenceClickListener = openDiscoveryScreenPreferenceClickListener
+//        val discoveryPreference = findPreference<VectorPreference>(VectorPreferences.SETTINGS_DISCOVERY_PREFERENCE_KEY)!!
+//        discoveryPreference.onPreferenceClickListener = openDiscoveryScreenPreferenceClickListener
 
         mIdentityServerPreference.onPreferenceClickListener = openDiscoveryScreenPreferenceClickListener
 
@@ -200,8 +201,8 @@ class VectorSettingsGeneralFragment @Inject constructor(
                 .summary = session.myUserId
 
         // homeserver
-        findPreference<VectorPreference>(VectorPreferences.SETTINGS_HOME_SERVER_PREFERENCE_KEY)!!
-                .summary = session.sessionParams.homeServerUrl
+//        findPreference<VectorPreference>(VectorPreferences.SETTINGS_HOME_SERVER_PREFERENCE_KEY)!!
+//                .summary = session.sessionParams.homeServerUrl
 
         // Contacts
         setContactsPreferences()
@@ -226,16 +227,16 @@ class VectorSettingsGeneralFragment @Inject constructor(
             }
         }
 
-        (findPreference(VectorPreferences.SETTINGS_ALLOW_INTEGRATIONS_KEY) as? VectorSwitchPreference)?.let {
-            it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
-                // Disable it while updating the state, will be re-enabled by the account data listener.
-                it.isEnabled = false
-                lifecycleScope.launch {
-                    session.integrationManagerService().setIntegrationEnabled(newValue as Boolean)
-                }
-                true
-            }
-        }
+//        (findPreference(VectorPreferences.SETTINGS_ALLOW_INTEGRATIONS_KEY) as? VectorSwitchPreference)?.let {
+//            it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
+//                // Disable it while updating the state, will be re-enabled by the account data listener.
+//                it.isEnabled = false
+//                lifecycleScope.launch {
+//                    session.integrationManagerService().setIntegrationEnabled(newValue as Boolean)
+//                }
+//                true
+//            }
+//        }
 
         // clear medias cache
         findPreference<VectorPreference>(VectorPreferences.SETTINGS_CLEAR_MEDIA_CACHE_PREFERENCE_KEY)!!.let {
@@ -285,7 +286,7 @@ class VectorSettingsGeneralFragment @Inject constructor(
         super.onResume()
         // Refresh identity server summary
         mIdentityServerPreference.summary = session.identityService().getCurrentIdentityServerUrl() ?: getString(R.string.identity_server_not_defined)
-        refreshIntegrationManagerSettings()
+//        refreshIntegrationManagerSettings()
         session.integrationManagerService().addListener(integrationServiceListener)
     }
 
@@ -294,24 +295,24 @@ class VectorSettingsGeneralFragment @Inject constructor(
         session.integrationManagerService().removeListener(integrationServiceListener)
     }
 
-    private fun refreshIntegrationManagerSettings() {
-        val integrationAllowed = session.integrationManagerService().isIntegrationEnabled()
-        (findPreference<SwitchPreference>(VectorPreferences.SETTINGS_ALLOW_INTEGRATIONS_KEY))!!.let {
-            val savedListener = it.onPreferenceChangeListener
-            it.onPreferenceChangeListener = null
-            it.isChecked = integrationAllowed
-            it.isEnabled = true
-            it.onPreferenceChangeListener = savedListener
-        }
-        findPreference<VectorPreference>(VectorPreferences.SETTINGS_INTEGRATION_MANAGER_UI_URL_KEY)!!.let {
-            if (integrationAllowed) {
-                it.summary = session.integrationManagerService().getPreferredConfig().uiUrl
-                it.isVisible = true
-            } else {
-                it.isVisible = false
-            }
-        }
-    }
+//    private fun refreshIntegrationManagerSettings() {
+//        val integrationAllowed = session.integrationManagerService().isIntegrationEnabled()
+//        (findPreference<SwitchPreference>(VectorPreferences.SETTINGS_ALLOW_INTEGRATIONS_KEY))!!.let {
+//            val savedListener = it.onPreferenceChangeListener
+//            it.onPreferenceChangeListener = null
+//            it.isChecked = integrationAllowed
+//            it.isEnabled = true
+//            it.onPreferenceChangeListener = savedListener
+//        }
+//        findPreference<VectorPreference>(VectorPreferences.SETTINGS_INTEGRATION_MANAGER_UI_URL_KEY)!!.let {
+//            if (integrationAllowed) {
+//                it.summary = session.integrationManagerService().getPreferredConfig().uiUrl
+//                it.isVisible = true
+//            } else {
+//                it.isVisible = false
+//            }
+//        }
+//    }
 
     override fun onImageReady(uri: Uri?) {
         if (uri != null) {

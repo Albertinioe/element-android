@@ -1,5 +1,6 @@
 /*
  * Copyright 2019 New Vector Ltd
+ * Copyright 2021 Qwerty Networks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,30 +65,37 @@ class VectorSettingsHelpAboutFragment @Inject constructor(
         }
 
         // SDK version
-        findPreference<VectorPreference>(VectorPreferences.SETTINGS_SDK_VERSION_PREFERENCE_KEY)!!.let {
-            it.summary = Matrix.getSdkVersion()
-
-            it.setOnPreferenceClickListener { pref ->
-                copyToClipboard(requireContext(), pref.summary)
-                true
-            }
-        }
+//        findPreference<VectorPreference>(VectorPreferences.SETTINGS_SDK_VERSION_PREFERENCE_KEY)!!.let {
+//            it.summary = Matrix.getSdkVersion()
+//
+//            it.setOnPreferenceClickListener { pref ->
+//                copyToClipboard(requireContext(), pref.summary)
+//                true
+//            }
+//        }
 
         // olm version
         findPreference<VectorPreference>(VectorPreferences.SETTINGS_OLM_VERSION_PREFERENCE_KEY)!!
                 .summary = session.cryptoService().getCryptoVersion(requireContext(), false)
 
         // copyright
-        findPreference<VectorPreference>(VectorPreferences.SETTINGS_COPYRIGHT_PREFERENCE_KEY)!!
-                .onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            openUrlInChromeCustomTab(requireContext(), null, VectorSettingsUrls.COPYRIGHT)
-            false
-        }
+//        findPreference<VectorPreference>(VectorPreferences.SETTINGS_COPYRIGHT_PREFERENCE_KEY)!!
+//                .onPreferenceClickListener = Preference.OnPreferenceClickListener {
+//            openUrlInChromeCustomTab(requireContext(), null, VectorSettingsUrls.COPYRIGHT)
+//            false
+//        }
 
         // terms & conditions
         findPreference<VectorPreference>(VectorPreferences.SETTINGS_APP_TERM_CONDITIONS_PREFERENCE_KEY)!!
                 .onPreferenceClickListener = Preference.OnPreferenceClickListener {
             openUrlInChromeCustomTab(requireContext(), null, VectorSettingsUrls.TAC)
+            false
+        }
+
+        // application info
+        findPreference<VectorPreference>(VectorPreferences.SETTINGS_APPLICATION_INFO_PREFERENCE_KEY)!!
+                .onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            openUrlInChromeCustomTab(requireContext(), null, VectorSettingsUrls.APPLICATION_INFO)
             false
         }
 

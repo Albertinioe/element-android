@@ -59,7 +59,8 @@
             app:layout_constraintEnd_toStartOf="@+id/homeDrawerQRCodeButton"
             app:layout_constraintStart_toStartOf="@+id/homeDrawerUsernameView"
             app:layout_constraintTop_toBottomOf="@+id/homeDrawerUsernameView"
-            tools:text="@sample/users.json/data/id" />
+            tools:text="@sample/users.json/data/id"
+            android:visibility="gone"/>
 
         <ImageView
             android:id="@+id/homeDrawerQRCodeButton"
@@ -95,7 +96,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/homeDrawerHeaderAvatarView"
             app:layout_constraintTop_toBottomOf="@+id/homeDrawerHeaderAvatarView"
-            tools:ignore="MissingPrefix" />
+            tools:ignore="MissingPrefix"
+            android:visibility="invisible"/>
 
         <ImageView
             android:id="@+id/homeDrawerHeaderDebugView"

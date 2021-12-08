@@ -85,7 +85,7 @@ object FcmHelper {
                 Timber.e(e, "## ensureFcmTokenIsRetrieved() : failed")
             }
         } else {
-            Toast.makeText(activity, R.string.no_valid_google_play_services_apk, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(activity, R.string.no_valid_google_play_services_apk, Toast.LENGTH_SHORT).show()
             Timber.e("No valid Google Play Services found. Cannot use FCM.")
         }
     }
