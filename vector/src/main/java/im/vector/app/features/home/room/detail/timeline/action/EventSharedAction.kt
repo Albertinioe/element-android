@@ -45,6 +45,9 @@ sealed class EventSharedAction(@StringRes val titleRes: Int,
     data class Quote(val eventId: String) :
             EventSharedAction(R.string.quote, R.drawable.ic_quote)
 
+    data class Translate(val content: String) :
+            EventSharedAction(R.string.translate, R.drawable.ic_translate)
+
     data class Reply(val eventId: String) :
             EventSharedAction(R.string.reply, R.drawable.ic_reply)
 

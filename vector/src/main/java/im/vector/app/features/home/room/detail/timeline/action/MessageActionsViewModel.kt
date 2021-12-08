@@ -345,6 +345,10 @@ class MessageActionsViewModel @AssistedInject constructor(@Assisted
                 add(EventSharedAction.Quote(eventId))
             }
 
+            if (canTranslate(msgType)) {
+                add(EventSharedAction.Translate(messageContent!!.body))
+            }
+
             if (timelineEvent.hasBeenEdited()) {
                 add(EventSharedAction.ViewEditHistory(informationData))
             }
@@ -440,6 +444,17 @@ class MessageActionsViewModel @AssistedInject constructor(@Assisted
         // Only event of type EventType.MESSAGE and EventType.STICKER are supported for the moment
         if (event.root.getClearType() !in listOf(EventType.MESSAGE, EventType.STICKER)) return false
         return event.annotations?.reactionsSummary?.isNotEmpty() ?: false
+    }
+
+    // translate
+    private fun canTranslate(msgType: String?) : Boolean {
+        return when (msgType) {
+            MessageType.MSGTYPE_TEXT,
+            MessageType.MSGTYPE_NOTICE,
+            MessageType.MSGTYPE_EMOTE,
+            MessageType.MSGTYPE_LOCATION -> true
+            else                         -> false
+        }
     }
 
     private fun canEdit(event: TimelineEvent, myUserId: String, actionPermissions: ActionPermissions): Boolean {

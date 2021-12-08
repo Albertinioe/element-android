@@ -85,6 +85,7 @@ class MessageComposerViewModel @AssistedInject constructor(
         when (action) {
             is MessageComposerAction.EnterEditMode                  -> handleEnterEditMode(action)
             is MessageComposerAction.EnterQuoteMode                 -> handleEnterQuoteMode(action)
+            is MessageComposerAction.EnterTranslateMode             -> handleEnterTranslateMode(action)
             is MessageComposerAction.EnterRegularMode               -> handleEnterRegularMode(action)
             is MessageComposerAction.EnterReplyMode                 -> handleEnterReplyMode(action)
             is MessageComposerAction.SendMessage                    -> handleSendMessage(action)
@@ -148,6 +149,13 @@ class MessageComposerViewModel @AssistedInject constructor(
     }
 
     private fun handleEnterQuoteMode(action: MessageComposerAction.EnterQuoteMode) {
+        room.getTimeLineEvent(action.eventId)?.let { timelineEvent ->
+            setState { copy(sendMode = SendMode.Quote(timelineEvent, action.text)) }
+        }
+    }
+
+    // translate
+    private fun handleEnterTranslateMode(action: MessageComposerAction.EnterTranslateMode) {
         room.getTimeLineEvent(action.eventId)?.let { timelineEvent ->
             setState { copy(sendMode = SendMode.Quote(timelineEvent, action.text)) }
         }
