@@ -1823,7 +1823,7 @@ ${app_name}からあなた個人の電話帳への検索要求を許可する場
     <string name="login_signin_sso">SSOを続行します</string>
     <string name="login_signin">サインイン</string>
     <string name="login_signup">サインアップ</string>
-    <string name="login_connect_to_modular">Element Matrix Servicesに接続する</string>
+    <string name="login_connect_to_modular">QAIM Matrix Servicesに接続する</string>
     <string name="login_signin_matrix_id_title">Matrix IDでサインイン</string>
     <string name="login_connect_using_matrix_id_submit">Matrix IDでサインイン</string>
     <string name="login_server_modular_learn_more">もっと詳しく知る</string>

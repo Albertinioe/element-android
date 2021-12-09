@@ -884,7 +884,7 @@
     <string name="login_terms_title">Akceptu la uzokondiĉojn por pluiĝi</string>
     <string name="login_a11y_captcha_container">Bonvolu fari la teston de homeco</string>
     <string name="login_a11y_choose_other">Elekti propran hejmservilon</string>
-    <string name="login_a11y_choose_modular">Elekti Element Matrix Services</string>
+    <string name="login_a11y_choose_modular">Elekti QAIM Matrix Services</string>
     <string name="login_a11y_choose_matrix_org">Elekti matrix.org</string>
     <string name="login_signup_cancel_confirmation_content">Via konto ankoraŭ ne estas kreita.
 \n
@@ -939,10 +939,10 @@
     <string name="login_sso_error_message">Eraris enlegado de la paĝo: %1$s (%2$d)</string>
     <string name="login_server_url_form_common_notice">Enigu adreson de servilo, kiun vi volas uzi</string>
     <string name="login_server_url_form_other_hint">Adreso</string>
-    <string name="login_server_url_form_modular_hint">Adreso de Element Matrix Services</string>
+    <string name="login_server_url_form_modular_hint">Adreso de QAIM Matrix Services</string>
     <string name="login_signin_to">Saluti al %1$s</string>
     <string name="login_connect_to_a_custom_server">Konektiĝi al propra servilo</string>
-    <string name="login_connect_to_modular">Konektiĝi al «Element Matrix Services»</string>
+    <string name="login_connect_to_modular">Konektiĝi al «QAIM Matrix Services»</string>
     <string name="login_connect_to">Konektiĝi al %1$s</string>
     <string name="login_continue">Pluiĝi</string>
     <string name="login_server_other_text">Propraj kaj altivelaj agordoj</string>
@@ -1991,7 +1991,7 @@
     <string name="bootstrap_info_confirm_text">Replenigu per via %s por konfirmi ĝin.</string>
     <string name="initialize_cross_signing">Pretigi delegajn subskribojn</string>
     <string name="settings_rageshake">Kolera skuado</string>
-    <string name="login_server_url_form_modular_notice">Enigu la adreson de tiu servilo aŭ «Modular Element», kiun vi volas uzi</string>
+    <string name="login_server_url_form_modular_notice">Enigu la adreson de tiu servilo aŭ «Modular QAIM», kiun vi volas uzi</string>
     <string name="login_server_url_form_modular_text">Pagenda gastigado por organizaĵoj</string>
     <string name="login_server_other_title">Alia</string>
     <string name="login_server_modular_text">Pagenda gastigado por organizaĵoj</string>
@@ -2057,7 +2057,7 @@
     <string name="disclaimer_positive_button">EKSCIU PLION</string>
     <string name="disclaimer_negative_button">KOMPRENITE</string>
     <string name="disclaimer_content">Ni ĝojas anonci, ke ni ŝanĝis nian nomon! Via aplikaĵo estas ĝisdata kaj vi estas salutinta vian konton.</string>
-    <string name="disclaimer_title">Riot nun estas Element!</string>
+    <string name="disclaimer_title">QAIM!</string>
     <string name="notice_crypto_unable_to_decrypt_merged">Atendante historion de ĉifrado</string>
     <string name="crypto_error_withheld_generic">Vi ne povas aliri ĉi tiun mesaĝon, ĉar la sendinto intence ne sendis la ŝlosilojn</string>
     <string name="crypto_error_withheld_unverified">Vi ne povas aliri ĉi tiun mesaĝon ĉar la sendinto ne fidas vian salutaĵon</string>

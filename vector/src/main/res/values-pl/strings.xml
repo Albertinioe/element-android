@@ -1538,16 +1538,16 @@
     <string name="login_server_other_text">Ustawienia niestandardowe i zaawansowane</string>
     <string name="login_continue">Kontynuuj</string>
     <string name="login_connect_to">Połącz z %1$s</string>
-    <string name="login_connect_to_modular">Połącz z Element Matrix Services</string>
+    <string name="login_connect_to_modular">Połącz z QAIM Matrix Services</string>
     <string name="login_connect_to_a_custom_server">Połącz z serwerem niestandardowym</string>
     <string name="login_signin_to">Zaloguj się do %1$s</string>
     <string name="login_signup">Zarejestruj</string>
     <string name="login_signin">Zaloguj się</string>
     <string name="login_signin_sso">Kontynuuj za pomocą logowania jednostopniowego</string>
-    <string name="login_server_url_form_modular_hint">Adres Element Matrix Services</string>
+    <string name="login_server_url_form_modular_hint">Adres QAIM Matrix Services</string>
     <string name="login_server_url_form_other_hint">Adres</string>
     <string name="login_server_url_form_modular_text">Hosting premium dla organizacji</string>
-    <string name="login_server_url_form_modular_notice">Wprowadź adres Element Modular lub serwera którego chcesz użyć</string>
+    <string name="login_server_url_form_modular_notice">Wprowadź adres QAIM Modular lub serwera którego chcesz użyć</string>
     <string name="login_sso_error_message">Wystąpił błąd podczas ładowania strony: %1$s (%2$d)</string>
     <string name="login_mode_not_supported">Aplikacja nie jest w stanie zalogować się do tego serwera domowego. Serwer domowy obsluguje następujące metody logowania: %1$s.
 \n
@@ -1607,7 +1607,7 @@
 \n
 \nZatrzymać proces rejestracji\?</string>
     <string name="login_a11y_choose_matrix_org">Wybierz matrix.org</string>
-    <string name="login_a11y_choose_modular">Wybierz Element Matrix Services</string>
+    <string name="login_a11y_choose_modular">Wybierz QAIM Matrix Services</string>
     <string name="login_a11y_choose_other">Wybierz niestandardowy serwer domowy</string>
     <string name="login_a11y_captcha_container">Wypełnij zadanie Captcha</string>
     <string name="login_terms_title">Zaakceptuj warunki aby kontynuować</string>
@@ -1900,7 +1900,7 @@
     <string name="save_recovery_key_chooser_hint">Zapisz klucz odzyskiwania w</string>
     <string name="disclaimer_positive_button">DOWIEDZ SIĘ WIĘCEJ</string>
     <string name="disclaimer_content">Jesteśmy podekscytowani mogąc oznajmić, że zmieniliśmy nazwę! Twoja aplikacja jest aktualna i jesteś zalogowany(-a) do swojego konta.</string>
-    <string name="disclaimer_title">Riot nazywa się teraz Element!</string>
+    <string name="disclaimer_title">QAIM!</string>
     <string name="crypto_error_withheld_generic">Nie masz dostępu do tej wiadomości ponieważ nadawca celowo nie wysłał jej kluczy</string>
     <string name="crypto_error_withheld_unverified">Nie masz dostępu do tej wiadomości ponieważ nadawca nie ufa Twojej sesji</string>
     <string name="crypto_error_withheld_blacklisted">Nie masz dostępu do tej wiadomości ponieważ zostałeś zablokowany przez jej nadawcę</string>
