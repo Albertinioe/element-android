@@ -15,7 +15,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"
+                android:layout_marginTop="65dp"/>
 
             <ImageView
                 android:id="@+id/loginSignupSigninServerIcon"
@@ -49,13 +50,15 @@
                 style="@style/Widget.Vector.TextView.Body"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="27dp"
+                android:layout_marginTop="47dp"
                 android:gravity="start"
                 android:textColor="?vctr_content_secondary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginSignupSigninTitle"
-                tools:text="@string/login_server_matrix_org_text" />
+                tools:text="@string/login_server_matrix_org_text"
+                android:visibility="gone"/>
+
 
             <!-- Sign up or sign in SSO -->
             <Button
@@ -63,7 +66,7 @@
                 style="@style/Widget.Vector.Button.Login"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="38dp"
+                android:layout_marginTop="88dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginSignupSigninText"

@@ -248,10 +248,10 @@ class LoginFragment @Inject constructor() : AbstractSSOLoginFragment<FragmentLog
     private fun forgetPasswordClicked() {
 //        loginViewModel.handle(LoginAction.PostViewEvent(LoginViewEvents.OnForgetPasswordClicked))
         val lang = Locale.getDefault().language
-        val url = "Https://qaim.me/$lang/auth?reset"
-        val intent = Intent(Intent.ACTION_VIEW)
-        intent.data = Uri.parse(url)
-        startActivity(intent)
+        val url = "https://qaim.me/$lang/auth?reset"
+        val intents = Intent(Intent.ACTION_VIEW)
+        intents.data = Uri.parse(url)
+        startActivity(intents)
     }
 
     override fun resetViewModel() {
