@@ -2535,7 +2535,7 @@
     <string name="login_continue">Continue</string>
     <!-- Replaced string is the homeserver url -->
     <string name="login_connect_to">Connect to %1$s</string>
-    <string name="login_connect_to_modular">Connect to Element Matrix Services</string>
+    <string name="login_connect_to_modular">Connect to MyBusiness Matrix Services</string>
     <string name="login_connect_to_a_custom_server">Connect to a custom server</string>
     <!-- Replaced string is the homeserver url -->
     <string name="login_signin_to">Sign in to %1$s</string>
@@ -2544,10 +2544,10 @@
     <string name="login_signin_sso">Continue with SSO</string>
     <string name="login_clear_homeserver_history">Clear history</string>
 
-    <string name="login_server_url_form_modular_hint">Element Matrix Services Address</string>
+    <string name="login_server_url_form_modular_hint">MyBusiness Matrix Services Address</string>
     <string name="login_server_url_form_other_hint">Address</string>
     <string name="login_server_url_form_modular_text">Premium hosting for organisations</string>
-    <string name="login_server_url_form_modular_notice">Enter the address of the Modular Element or Server you want to use</string>
+    <string name="login_server_url_form_modular_notice">Enter the address of the Modular MyBusiness or Server you want to use</string>
     <string name="login_server_url_form_common_notice">Enter the address of the server you want to use</string>
 
     <string name="login_sso_error_message">An error occurred when loading the page: %1$s (%2$d)</string>
@@ -2620,7 +2620,7 @@
     <string name="login_signup_cancel_confirmation_content">Your account is not created yet.\n\nStop the registration process?</string>
 
     <string name="login_a11y_choose_matrix_org">Select matrix.org</string>
-    <string name="login_a11y_choose_modular">Select Element Matrix Services</string>
+    <string name="login_a11y_choose_modular">Select MyBusiness Matrix Services</string>
     <string name="login_a11y_choose_other">Select a custom homeserver</string>
     <string name="login_a11y_captcha_container">Please perform the captcha challenge</string>
     <string name="login_terms_title">Accept terms to continue</string>
@@ -3262,7 +3262,7 @@
     <string name="crypto_error_withheld_generic">You cannot access this message because the sender purposely did not send the keys</string>
     <string name="notice_crypto_unable_to_decrypt_merged">Waiting for encryption history</string>
 
-    <string name="disclaimer_title">Riot is now Element!</string>
+    <string name="disclaimer_title">MyBusiness!</string>
     <string name="disclaimer_content">We’re excited to announce we’ve changed name! Your app is up to date and you’re signed in to your account.</string>
     <string name="disclaimer_negative_button">GOT IT</string>
     <string name="disclaimer_positive_button">LEARN MORE</string>
@@ -3640,7 +3640,7 @@
 
     <string name="link_this_email_settings_link">Link this email with your account</string>
     <!-- %s will be replaced by the value of link_this_email_settings_link and styled as a link -->
-    <string name="link_this_email_with_your_account">%s in Settings to receive invites directly in Element.</string>
+    <string name="link_this_email_with_your_account">%s in Settings to receive invites directly in MyBusiness.</string>
 
     <!-- Poll -->
     <string name="create_poll_title">Create Poll</string>
@@ -3651,6 +3651,7 @@
     <string name="create_poll_add_option">ADD OPTION</string>
     <string name="create_poll_button">CREATE POLL</string>
     <string name="create_poll_empty_question_error">Question cannot be empty</string>
+    <string name="go_back">go back</string>
     <plurals name="create_poll_not_enough_options_error">
         <item quantity="one">At least %1$s option is required</item>
         <item quantity="other">At least %1$s options are required</item>

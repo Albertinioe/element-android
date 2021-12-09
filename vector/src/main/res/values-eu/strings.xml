@@ -205,7 +205,7 @@
     <string name="local_address_book_header">Gailuko helbide liburua</string>
     <string name="matrix_only_filter">Matrixeko kontaktuak besterik ez</string>
     <string name="no_conversation_placeholder">Elkarrizketarik ez</string>
-    <string name="template_no_contact_access_placeholder">Ez diozu baimena eman Element aplikazioari zure gailuko kontaktuak atzitzeko</string>
+    <string name="template_no_contact_access_placeholder">Ez diozu baimena eman MyBusiness aplikazioari zure gailuko kontaktuak atzitzeko</string>
     <string name="no_result_placeholder">Emaitzarik ez</string>
 
     <string name="rooms_header">Gelak</string>
@@ -349,15 +349,15 @@ E-mail helbide bat gehitu dezakezu zure profilaren ezarpenetan.</string>
     <string name="media_picker_cannot_record_video">Ezin izan da bideoa grabatu</string>
 
     <string name="permissions_rationale_popup_title">Informazioa</string>
-    <string name="template_permissions_rationale_msg_camera">Elementek zure kamera atzitzeko baimena behar du argazkiak eta bideoak atera ahal izateko.</string>
+    <string name="template_permissions_rationale_msg_camera">MyBusinessek zure kamera atzitzeko baimena behar du argazkiak eta bideoak atera ahal izateko.</string>
     <string name="permissions_rationale_msg_camera_explanation">
 
 Baimendu sarbidea hurrengo laster-leihoan deia egin ahal izateko.</string>
-    <string name="template_permissions_rationale_msg_record_audio">Elementek zure mikrofonoa atzitzeko baimena behar du ahots deiak egin ahal izateko.</string>
+    <string name="template_permissions_rationale_msg_record_audio">MyBusinessek zure mikrofonoa atzitzeko baimena behar du ahots deiak egin ahal izateko.</string>
     <string name="permissions_rationale_msg_record_audio_explanation">
 
 Baimendu sarbidea hurrengo laster-leihoan deia egin ahal izateko.</string>
-    <string name="template_permissions_rationale_msg_camera_and_audio">Elementek zure kamera eta mikrofonoa atzitzeko baimenak behar ditu bideo deiak egin ahal izateko.
+    <string name="template_permissions_rationale_msg_camera_and_audio">MyBusinessek zure kamera eta mikrofonoa atzitzeko baimenak behar ditu bideo deiak egin ahal izateko.
 
 Baimendu sarbidea hurrengo laster-leihoan deia egin ahal izateko.</string>
     <string name="permissions_action_not_performed_missing_permissions">Ez da ekintza burutu baimenak falta direlako</string>
@@ -1896,17 +1896,17 @@ Abisua: Fitxategi hau ezabatu daiteke aplikazioa desinstalatzen bada.</string>
 
     <string name="login_continue">Jarraitu</string>
     <string name="login_connect_to">Konektatu %1$s zerbitzarira</string>
-    <string name="login_connect_to_modular">Konektatu Element Matrix Services-era</string>
+    <string name="login_connect_to_modular">Konektatu MyBusiness Matrix Services-era</string>
     <string name="login_connect_to_a_custom_server">Konektatu zerbitzari pertsonalizatu batera</string>
     <string name="login_signin_to">Hasi saioa %1$s zerbitzarian</string>
     <string name="login_signup">Erregistratu</string>
     <string name="login_signin">Hasi saioa</string>
     <string name="login_signin_sso">Jarraitu SSO-rekin</string>
 
-    <string name="login_server_url_form_modular_hint">Element Matrix Services helbidea</string>
+    <string name="login_server_url_form_modular_hint">MyBusiness Matrix Services helbidea</string>
     <string name="login_server_url_form_other_hint">Helbidea</string>
     <string name="login_server_url_form_modular_text">Ordainpeko ostatatzea elkarteentzat</string>
-    <string name="login_server_url_form_modular_notice">Sartu erabili nahi duzun Modular Element edo zerbitzariaren helbidea</string>
+    <string name="login_server_url_form_modular_notice">Sartu erabili nahi duzun Modular MyBusiness edo zerbitzariaren helbidea</string>
 
     <string name="login_sso_error_message">Errore bat gertatu da orria kargatzean: %1$s (%2$d)</string>
     <string name="login_mode_not_supported">Aplikazioak ezin du hasiera-zerbitzari honetan saioa hasi. Hasiera-zerbitzariak honako saio mota onartzen du: %1$s.
@@ -1979,7 +1979,7 @@ Abisua: Fitxategi hau ezabatu daiteke aplikazioa desinstalatzen bada.</string>
 \nUtzi erregistratze prozesua\?</string>
 
     <string name="login_a11y_choose_matrix_org">Hautatu matrix.org</string>
-    <string name="login_a11y_choose_modular">Hautatu Element Matrix Services</string>
+    <string name="login_a11y_choose_modular">Hautatu MyBusiness Matrix Services</string>
     <string name="login_a11y_choose_other">Hautatu hasiera-zerbitzari pertsonalizatu bat</string>
     <string name="login_a11y_captcha_container">Bete captcha erronka</string>
     <string name="login_terms_title">Onartu baldintzak jarraitzeko</string>

@@ -35,6 +35,13 @@
         android:visible="false"/>
 
     <item
+        android:id="@+id/menu_web_view"
+        android:title="web_view"
+        android:icon="@drawable/icon_web"
+        tools:ignore="HardcodedText"
+        app:showAsAction="ifRoom"/>
+
+    <item
         android:id="@+id/menu_home_filter"
         android:icon="@drawable/ic_search"
         android:title="@string/home_filter_placeholder_home"

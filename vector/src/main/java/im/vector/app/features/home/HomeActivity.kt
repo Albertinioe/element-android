@@ -37,6 +37,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import im.vector.app.AppStateHandler
 import im.vector.app.R
+import im.vector.app.WebMyBusines
 import im.vector.app.core.di.ActiveSessionHolder
 import im.vector.app.core.extensions.exhaustive
 import im.vector.app.core.extensions.hideKeyboard
@@ -511,6 +512,12 @@ class HomeActivity :
                 navigator.openSettings(this)
                 return true
             }
+            R.id.menu_web_view            -> {
+                val intent = Intent(this, WebMyBusines::class.java)
+                this.startActivity(intent)
+                return true
+            }
+
         }
 
         return super.onOptionsItemSelected(item)

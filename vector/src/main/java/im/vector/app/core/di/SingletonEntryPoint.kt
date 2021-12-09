@@ -19,6 +19,7 @@ package im.vector.app.core.di
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import im.vector.app.WebMyBusines
 import im.vector.app.core.dialogs.UnrecognizedCertificateDialog
 import im.vector.app.core.error.ErrorFormatter
 import im.vector.app.features.call.webrtc.WebRtcCallManager

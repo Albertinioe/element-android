@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WebMyBusines"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <LinearLayout
+       android:id="@+id/layHOme"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:background="#CB000000"
+       android:orientation="horizontal"
+       android:gravity="center"
+       android:layout_weight="0"
+       tools:ignore="UselessParent">
+
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/buttonClosed"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginHorizontal="140dp"
+           android:background="#00FFFFFF"
+
+           app:icon="?attr/homeAsUpIndicator"
+           app:iconPadding="10dp"
+           app:iconSize="30dp"
+           android:text="@string/go_back"
+           android:textSize="13sp"
+           app:iconTint="@color/element_accent_dark"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"/>
+   </LinearLayout>
+
+    <WebView
+        android:id="@+id/web_my"
+        android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/lay_foot"
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#CB000000"
+        android:orientation="horizontal"/>
+
+</LinearLayout>

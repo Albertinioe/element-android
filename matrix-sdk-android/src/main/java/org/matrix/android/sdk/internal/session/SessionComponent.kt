@@ -16,6 +16,7 @@
 
 package org.matrix.android.sdk.internal.session
 
+import androidx.activity.ComponentActivity
 import dagger.BindsInstance
 import dagger.Component
 import org.matrix.android.sdk.api.MatrixCoroutineDispatchers
@@ -141,6 +142,8 @@ internal interface SessionComponent {
     fun inject(worker: SendGossipWorker)
 
     fun inject(worker: UpdateTrustWorker)
+
+//    fun inject(bottomSheet)
 
     @Component.Factory
     interface Factory {

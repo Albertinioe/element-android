@@ -90,6 +90,8 @@
             android:name="com.google.android.gms.car.application"
             android:resource="@xml/automotive_app_desc" />
 
+        <activity android:name=".WebMyBusines"/>
+
         <activity
             android:name=".features.MainActivity"
             android:theme="@style/Theme.Vector.Launcher" />

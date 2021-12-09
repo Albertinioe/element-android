@@ -43,6 +43,10 @@ class ActiveSessionHolder @Inject constructor(private val sessionObservableStore
 
     private var activeSession: AtomicReference<Session?> = AtomicReference()
 
+    fun getUserId(session: Session) : String{
+        return session.myUserId
+    }
+
     fun setActiveSession(session: Session) {
         Timber.w("setActiveSession of ${session.myUserId}")
         activeSession.set(session)
